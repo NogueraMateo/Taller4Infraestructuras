@@ -34,7 +34,6 @@ def solucion_concurrente():
             # Cada bloque se le asigna a un hilo como dice el enunciado del taller
             hilos.append(threading.Thread(target=sumar_bloque, args=((row, row+100), (cols_block, cols_block +100), contador_hilos)))
             contador_hilos += 1
-            print(f"Filas -> ({row}, {row+100}) \t Columnas ({cols_block}, {cols_block+100})")
 
     for hilo in hilos:
         hilo.start()
