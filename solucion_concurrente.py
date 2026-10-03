@@ -9,7 +9,7 @@ def crear_matriz():
 
 matriz_1000_x_1000 = crear_matriz()
 
-resultados = [0] * 100
+resultados = [0] * 100 # 100 es el numero de bloques y de hilos. Luego se tendrán 100 resultados
 
 def sumar_bloque(filas: tuple[int, int], columnas: tuple[int, int], hilo_id):
     block_sum = 0
@@ -52,11 +52,7 @@ def solucion_concurrente():
 
     print(f"Resultado esperado calculado con numpy: {total_esperado}")
     print(f"Resultado calculado con hilos: {total}")
-    print(f"Tiempo total {tiempo_fin-tiempo_inicio}")
-
-
-def solucion_paralelo():
-    pass
+    print(f"Tiempo concurrente {tiempo_fin-tiempo_inicio}")
 
 
 if __name__ == "__main__":
