@@ -53,8 +53,8 @@ def obtener_bloques() -> list[BloqueMatriz]:
     los datos que describe un bloque de la matriz.
     """
     lista_bloques = []
-    for row in range(0, 1000, 100):
-        for cols_block in range(0, 1000, 100):
+    for row in range(0, dim, 100):
+        for cols_block in range(0, dim, 100):
             lista_bloques.append(BloqueMatriz(row, row+100, cols_block, cols_block + 100))
 
     return lista_bloques
@@ -80,9 +80,9 @@ if __name__ == "__main__":
 
         bloques = obtener_bloques()
 
-        bloques_por_proceso = 100 // cpu_count()
+        bloques_por_proceso = len(bloques) // cpu_count()
 
-        resto = 100 % cpu_count()
+        resto = len(bloques) % cpu_count()
 
         procesos: list[Process] = []
 
